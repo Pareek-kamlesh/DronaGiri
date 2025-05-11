@@ -1,0 +1,90 @@
+.home-container {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.home-container h1 {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(to right, #00695c, #26a69a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 105, 92, 0.2);
+}
+
+/* Paragraph */
+.home-container p {
+  font-size: 20px;
+  color: #455a64;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 0 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Product Card */
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Product Title */
+.product-card h4 {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  word-break: break-word;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .home-container h1 {
+    font-size: 34px;
+  }
+
+  .home-container p {
+    font-size: 17px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+}

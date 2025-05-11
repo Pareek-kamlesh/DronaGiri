@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Cough Syrup",
+    "description": "Effective relief for cough and sore throat.",
+    "image": "cough_syrup.jpg"
+  },
+  {
+    "name": "Iron Syrup",
+    "description": "Boosts iron levels and energy.",
+    "image": "iron_syrup.jpg"
+  }
+]
