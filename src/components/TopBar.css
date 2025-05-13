@@ -1,28 +1,30 @@
+/* src/components/TopBar.css */
 .top-bar {
-  background: #002147; /* Deep blue background */
-  color: white;
-  padding: 12px; /* Adjusted padding for better spacing */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+  padding: 14px;
   text-align: center;
   font-size: 14px;
-  font-family: Arial, sans-serif; /* Ensuring consistent font across browsers */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .top-bar a {
-  color: #f0f0f0;
+  color: #00ffe7;
   text-decoration: none;
-  font-weight: bold; /* Added boldness for a stronger look */
-  transition: color 0.3s ease; /* Smooth color transition for hover effect */
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .top-bar a:hover {
   text-decoration: underline;
-  color: #ffcc00; /* Yellow color on hover for a brighter highlight */
+  color: #ffcc00;
 }
 
 @media (max-width: 768px) {
   .top-bar {
-    font-size: 12px; /* Reduce font size on smaller screens */
-    padding: 10px; /* Adjust padding for better space on smaller screens */
+    font-size: 12px;
+    padding: 10px;
   }
 }
+    

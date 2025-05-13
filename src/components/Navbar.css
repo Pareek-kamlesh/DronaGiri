@@ -1,11 +1,13 @@
 /* src/components/Navbar.css */
 .navbar {
-  background-color: #004080;
+  background-color: black;
+  backdrop-filter: blur(10px);
   padding: 16px 32px;
   color: white;
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
 }
 
 .navbar-container {
@@ -15,23 +17,28 @@
 }
 
 .logo {
-  color: white;
-  text-decoration: none;
-  font-size: 1.7rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 60px; /* Adjust the height as needed */
+  width: 200px; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure it fits within the navbar */
 }
 
 .hamburger {
   display: none;
   font-size: 2rem;
   cursor: pointer;
+  color: #ffffff;
   padding: 8px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 26px;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -41,26 +48,28 @@
 .nav-links li span {
   text-decoration: none;
   color: white;
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.25s ease-in-out;
 }
 
 .nav-links li a:hover,
 .nav-links li span:hover {
-  background-color: #0059b3;
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffe7;
+  transform: translateY(-2px);
 }
 
 .dropdown-menu {
   position: absolute;
-  background-color: #004080;
+  background-color: #0d1b2a;
   display: none;
   list-style: none;
   margin-top: 12px;
-  padding: 12px 16px;
-  border-radius: 6px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
 }
 
 .dropdown:hover .dropdown-menu,
@@ -69,21 +78,23 @@
 }
 
 .dropdown-menu li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .dropdown-menu li a {
-  color: white;
+  color: #ffffff;
   padding: 8px 12px;
   display: block;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: background-color 0.25s;
 }
 
 .dropdown-menu li a:hover {
-  background-color: #0059b3;
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #00ffe7;
 }
 
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -93,11 +104,12 @@
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #004080;
+    background-color: #0f0c29;
     flex-direction: column;
     width: 100%;
     display: none;
     padding: 24px 32px;
+    border-radius: 0 0 16px 16px;
   }
 
   .nav-links.active {
@@ -110,12 +122,8 @@
 
   .dropdown-menu {
     position: static;
-    padding-left: 24px;
-    box-shadow: none;
     margin-top: 8px;
-  }
-
-  .dropdown-menu li {
-    margin-bottom: 10px;
+    box-shadow: none;
+    padding-left: 24px;
   }
 }

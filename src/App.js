@@ -9,6 +9,7 @@ import Juice from './pages/Products/Juice';
 import ThirdParty from './pages/ThirdParty';
 import Certification from './pages/Certification';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/certification" element={<Certification />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

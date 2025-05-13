@@ -1,7 +1,7 @@
-// src/components/Navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; // Add this file for styling
+import logo from '../assets/logo.png'; // Update the path to your logo file
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="logo">DronaGiriHealthCare</Link>
+        <Link to="/" className="logo">
+          <img src={logo} alt="DronaGiri Healthcare Logo" className="navbar-logo" />
+        </Link>
 
         <div className="hamburger" onClick={toggleMenu}>
           &#9776; {/* Unicode for hamburger icon */}
