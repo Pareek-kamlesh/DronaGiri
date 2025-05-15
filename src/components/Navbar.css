@@ -1,15 +1,27 @@
-/* src/components/Navbar.css */
 .navbar {
-  background-color: black;
+  background-color: white;
   backdrop-filter: blur(10px);
-  padding: 16px 32px;
-  color: white;
-  position: sticky;
+  color: #1a1a1a;
+  position: sticky;      /* <-- Change this line */
   top: 0;
   z-index: 999;
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0);
+  transition: background 0.3s ease;
 }
 
+/* Darker when scrolled */
+.navbar--scrolled {
+  background-color: rgba(255, 255, 255, 0.7); /* translucent white */
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+/* Make logo translucent when navbar is translucent */
+.navbar--scrolled .navbar-logo {
+  opacity: 0.7; /* Match the navbar's alpha value */
+  transition: opacity 0.3s ease;
+}
+
+/* Layout */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -22,19 +34,21 @@
 }
 
 .navbar-logo {
-  height: 60px; /* Adjust the height as needed */
-  width: 200px; /* Maintain aspect ratio */
-  max-height: 100%; /* Ensure it fits within the navbar */
+  height: 60px;
+  width:fit-content;
+  max-height: 100%;
 }
 
+/* Hamburger Icon */
 .hamburger {
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #ffffff;
+  color: #1a1a1a;
   padding: 8px;
 }
 
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -47,8 +61,8 @@
 .nav-links li a,
 .nav-links li span {
   text-decoration: none;
-  color: white;
-  font-weight: 500;
+  color: #1a1a1a;
+  font-weight: 600;
   padding: 10px 16px;
   border-radius: 8px;
   transition: all 0.25s ease-in-out;
@@ -56,20 +70,21 @@
 
 .nav-links li a:hover,
 .nav-links li span:hover {
-  background: rgba(0, 255, 255, 0.1);
-  color: #00ffe7;
+  background: rgb(44, 93, 130); /* soft grey hover */
+  color: #f2f3f3; /* elegant teal accent */
   transform: translateY(-2px);
 }
 
+/* Dropdown */
 .dropdown-menu {
   position: absolute;
-  background-color: #0d1b2a;
+  background-color: rgba(255, 255, 255, 0.95);
   display: none;
   list-style: none;
   margin-top: 12px;
   padding: 14px 18px;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 .dropdown:hover .dropdown-menu,
@@ -82,16 +97,16 @@
 }
 
 .dropdown-menu li a {
-  color: #ffffff;
+  color: #1a1a1a;
   padding: 8px 12px;
   display: block;
   border-radius: 6px;
-  transition: background-color 0.25s;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 .dropdown-menu li a:hover {
-  background-color: rgba(0, 255, 255, 0.1);
-  color: #00ffe7;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #00796b;
 }
 
 /* Mobile Styles */
@@ -104,16 +119,22 @@
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #0f0c29;
+    background-color: rgba(255, 255, 255, 0.95);
     flex-direction: column;
     width: 100%;
-    display: none;
-    padding: 24px 32px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 32px;
     border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
   .nav-links.active {
-    display: flex;
+    max-height: 500px; /* allow enough height for items */
+    opacity: 1;
+    padding: 24px 32px;
   }
 
   .nav-links li {
@@ -125,5 +146,6 @@
     margin-top: 8px;
     box-shadow: none;
     padding-left: 24px;
+    background-color: transparent;
   }
 }

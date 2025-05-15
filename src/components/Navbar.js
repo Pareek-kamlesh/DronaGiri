@@ -1,25 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Add this file for styling
-import logo from '../assets/logo.png'; // Update the path to your logo file
+import './Navbar.css';
+import logo from '../assets/logo1.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const navbarRef = useRef(null);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleProducts = () => setProductsOpen(!productsOpen);
-  const closeMenu = () => setMenuOpen(false);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+  const toggleProducts = () => setProductsOpen(prev => !prev);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setProductsOpen(false);
+  };
+
+  // Handle scroll background change
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close menu on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+
+    if (menuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`} ref={navbarRef}>
       <div className="navbar-container">
         <Link to="/" className="logo">
           <img src={logo} alt="DronaGiri Healthcare Logo" className="navbar-logo" />
         </Link>
 
         <div className="hamburger" onClick={toggleMenu}>
-          &#9776; {/* Unicode for hamburger icon */}
+          &#9776;
         </div>
 
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>

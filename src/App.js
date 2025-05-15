@@ -10,6 +10,7 @@ import ThirdParty from './pages/ThirdParty';
 import Certification from './pages/Certification';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <a
+        href="https://wa.me/919351616121"
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+      >
+        <FaWhatsapp size={40} />
+      </a>
     </Router>
   );
 }
