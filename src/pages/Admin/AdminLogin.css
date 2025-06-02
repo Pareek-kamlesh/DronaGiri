@@ -1,0 +1,58 @@
+/* AdminLogin.css */
+.admin-login {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 32px 24px;
+  background: rgba(30, 34, 54, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  color: #fff;
+  text-align: center;
+}
+
+.admin-login h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1.5px;
+}
+
+.admin-login form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-login input[type="email"],
+.admin-login input[type="password"] {
+  padding: 12px;
+  border-radius: 7px;
+  border: 1px solid #4f8cff;
+  background: #23263a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.admin-login input[type="email"]:focus,
+.admin-login input[type="password"]:focus {
+  border: 1.5px solid #6f6fff;
+}
+
+.admin-login button {
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4f8cff 0%, #6f6fff 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.admin-login button:hover {
+  background: linear-gradient(90deg, #6f6fff 0%, #4f8cff 100%);
+  transform: translateY(-2px) scale(1.04);
+}

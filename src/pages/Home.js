@@ -40,11 +40,10 @@ const Home = () => {
       <h1>Welcome to Our Pharma Business</h1>
       <p>Explore our quality range of syrups, powders, and juices.</p>
 
-      <div className="product-grid">
+      <div className="home-product-grid">
         {products.map((product, index) => (
-          <div className="product-card" key={index}>
+          <div className="home-product-card" key={index}>
             <img src={product.src} alt={product.title} />
-            
           </div>
         ))}
       </div>

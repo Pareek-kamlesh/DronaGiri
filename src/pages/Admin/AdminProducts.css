@@ -1,0 +1,62 @@
+/* AdminProducts.css */
+.admin-products {
+  max-width: 1100px;
+  margin: 50px auto;
+  background: rgba(30, 34, 54, 0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  padding: 32px 24px;
+  color: #fff;
+}
+
+.admin-products h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 1.5px;
+}
+
+.admin-products table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(44, 48, 74, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-products th, .admin-products td {
+  padding: 14px 10px;
+  text-align: left;
+  border-bottom: 1px solid #3a3f5a;
+}
+
+.admin-products th {
+  background: #23263a;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+
+.admin-products tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-products img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
+}
+
+.admin-products button {
+  margin-right: 8px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #4f8cff 0%, #6f6fff 100%);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.admin-products button:hover {
+  background: linear-gradient(90deg, #6f6fff 0%, #4f8cff 100%);
+  transform: scale(1.05);
+}

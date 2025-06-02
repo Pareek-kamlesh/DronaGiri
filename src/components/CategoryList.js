@@ -1,12 +1,21 @@
 import React from 'react';
 
-const CategoryList = ({ categories, onSelect }) => (
+const CategoryList = ({ categories, selected, onSelect }) => (
   <div className="category-list">
-    {categories.map(category => (
-      <div key={category} className="category" onClick={() => onSelect(category)}>
-        <img src={`/assets/${category}.jpg`} alt={category} />
-        <p>{category}</p>
-      </div>
+    <button
+      className={!selected ? 'active' : ''}
+      onClick={() => onSelect(null)}
+    >
+      All
+    </button>
+    {categories.map(cat => (
+      <button
+        key={cat}
+        className={selected === cat ? 'active' : ''}
+        onClick={() => onSelect(cat)}
+      >
+        {cat}
+      </button>
     ))}
   </div>
 );

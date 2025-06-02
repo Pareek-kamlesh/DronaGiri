@@ -64,9 +64,9 @@ const Navbar = () => {
           <li className="dropdown">
             <span onClick={toggleProducts}>Products ▾</span>
             <ul className={`dropdown-menu ${productsOpen ? 'open' : ''}`}>
-              <li><Link to="/products/syrup" onClick={closeMenu}>Syrup</Link></li>
-              <li><Link to="/products/powder" onClick={closeMenu}>Powder</Link></li>
-              <li><Link to="/products/juice" onClick={closeMenu}>Juice</Link></li>
+              <li><Link to="/products?category=syrup" onClick={closeMenu}>Syrup</Link></li>
+              <li><Link to="/products?category=powder" onClick={closeMenu}>Powder</Link></li>
+              <li><Link to="/products?category=juice" onClick={closeMenu}>Juice</Link></li>
             </ul>
           </li>
           <li><Link to="/thirdparty" onClick={closeMenu}>Third Party Manufacturing</Link></li>
