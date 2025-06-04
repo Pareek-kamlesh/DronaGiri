@@ -42,6 +42,8 @@
 .admin-products img {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
+  max-width: 80px;
+  height: auto;
 }
 
 .admin-products button {
@@ -59,4 +61,67 @@
 .admin-products button:hover {
   background: linear-gradient(90deg, #6f6fff 0%, #4f8cff 100%);
   transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .admin-products {
+    padding: 18px 4px;
+  }
+  .admin-products h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-products table,
+  .admin-products thead,
+  .admin-products tbody,
+  .admin-products th,
+  .admin-products td,
+  .admin-products tr {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-products thead {
+    display: none;
+  }
+
+  .admin-products tr {
+    margin-bottom: 18px;
+    border-radius: 10px;
+    background: rgba(44, 48, 74, 0.95);
+    box-shadow: 0 2px 8px rgba(31, 38, 135, 0.10);
+    padding: 12px 0;
+  }
+
+  .admin-products td {
+    border: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 0.98rem;
+  }
+
+  .admin-products td:before {
+    content: attr(data-label);
+    flex: 0 0 120px;
+    font-weight: 600;
+    color: #4f8cff;
+    margin-right: 10px;
+    font-size: 0.97rem;
+  }
+
+  .admin-products img {
+    max-width: 60px;
+  }
+
+  .admin-products button {
+    margin: 6px 6px 0 0;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
 }
